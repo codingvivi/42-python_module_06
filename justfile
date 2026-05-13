@@ -19,12 +19,39 @@ _default:
 
 # run the entry script for the given exercise number
 [group('run')]
-run ex:
-    python3 {{src-dir}}/ex{{ex}}/*.py
+run-albemic ex:
+    python3 {{src-dir}}/ft_alembic_{{ex}}.py
 
 [group('run')]
-run-all:
-  for f in ex*/*.py; do python3 "$f"; done
+run-all-albemic:
+  for f in {0..5}; do just run-albemic "$f"; echo "" ; done
+
+# run the entry script for the given distillation exercise number
+[group('run')]
+run-distillation ex:
+    python3 {{src-dir}}/ft_distillation_{{ex}}.py
+
+[group('run')]
+run-all-distillation:
+  for f in {0..1}; do just run-distillation "$f"; echo "" ; done
+
+# run the entry script for the given transmutation exercise number
+[group('run')]
+run-transmutation ex:
+    python3 {{src-dir}}/ft_transmutation_{{ex}}.py
+
+[group('run')]
+run-all-transmutation:
+  for f in {0..2}; do just run-transmutation "$f"; echo "" ; done
+
+# run the entry script for the given kaboom exercise number
+[group('run')]
+run-kaboom ex:
+    python3 {{src-dir}}/ft_kaboom_{{ex}}.py
+
+[group('run')]
+run-all-kaboom:
+  for f in {0..1}; do just run-kaboom "$f"; echo "" ; done
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # dist
