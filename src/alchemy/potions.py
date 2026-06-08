@@ -3,7 +3,7 @@ from elements import create_fire, create_water
 
 
 def _potion(type: str, element1: str, element2: str) -> str:
-    return f"{type} potion brewed with {element1} and {element2}"
+    return f"{type} potion brewed with '{element1}' and '{element2}'"
 
 
 def healing_potion() -> str:

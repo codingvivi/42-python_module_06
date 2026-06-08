@@ -1,9 +1,6 @@
-from alchemy.elements import _create_element
-
-
 def create_fire() -> str:
-    return _create_element("Fire")
+    return "Fire element created"
 
 
 def create_water() -> str:
-    return _create_element("Water")
+    return "Water element created"

@@ -2,3 +2,11 @@ if __name__ == "__main__":
     print("=== Kaboom 1 ===")
     print("Access to alchemy/grimoire/dark_spellbook.py directly")
     print("Test import now - THIS WILL RAISE AN UNCAUGHT EXCEPTION")
+
+    try:
+        from alchemy.grimoire.dark_spellbook import dark_spell_record
+
+        dark_spell_record("Forbidden Spell", "arsenic and frogs")
+    except Exception as e:
+        print("Explosion detected:", e)
+        raise
